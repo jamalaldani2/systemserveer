@@ -63,7 +63,7 @@ client.on("message", (message) => {
   if (message.content.startsWith("Wclose")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`+close\`. This will time out in 10 seconds and be cancelled.`)
+       message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`Wclose\`. This will time out in 10 seconds and be cancelled.`)
            .then((m) => {
                message.channel.awaitMessages(response => response.content === 'Wclose', {
                        max: 1,
