@@ -20,4 +20,54 @@ var prefix = "W";
        
        
       });
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","Mēmbër's |√"));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
