@@ -179,7 +179,7 @@ client.on("message", message => {
   let role = message.content.split(" ").slice(2).join(" ");
   let mySupport = message.guild.roles.find('name',role);
   if(message.content.startsWith("*قبول")) {
-    let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
+    let acRoom = message.guild.channels.find('name', 'قبول-رفض');
     if(!acRoom) return message.reply("!!setac من فضلك انشاء روم **القبول-ال��فض** او اكتب الامر");
     if(acRoom) {
     if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
@@ -198,7 +198,7 @@ client.on('message',async message => {
   let mention = message.mentions.members.first();
   if(message.content.startsWith("*رفض")) {
   if(!message.channel.guild) return;
-  let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
+  let acRoom = message.guild.channels.find('name', 'قبول-رفض');
   if(!acRoom) return message.reply("!!setac من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
   if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
   if(!mention) return message.reply("منشن شخص");
