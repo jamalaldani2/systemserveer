@@ -467,9 +467,26 @@ return;
 }
 
 });
+client.on('message', message => {
+                                        if (message.content.startsWith("Wbans")) {
+                                            message.guild.fetchBans()
+                                            .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
+                                      .catch(console.error);
+                                    }
+                                    });
 
-
-
+ client.on("message", message => {
+                            var prefix = "W"
+                            if (!message.content.startsWith(prefix)) return;
+                              let command = message.content.split(" ")[0];
+                              command = command.slice(prefix.length);
+                                if(command === "mcskin") {
+                                        const args = message.content.split(" ").slice(1).join(" ")
+                                if (!args) return message.channel.send("** Type your skin name **");
+                                const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
+                            message.channel.send(image)
+                                }
+                            });       
 
 
 
