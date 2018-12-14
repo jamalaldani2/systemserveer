@@ -84,7 +84,7 @@ client.on("message", (message) => {
 });
 
 client.on("message", message => {
-            if(message.content.startsWith("*تقديم")) {
+            if(message.content.startsWith("Wتقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "✽➜『التقديمات』")
@@ -129,6 +129,7 @@ client.on("message", message => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
                                             m5.delete();
+						  m.edit( message.member + ', ** هل ستضع الشعار**' )
                       m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
@@ -178,7 +179,7 @@ client.on("message", message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
   let mySupport = message.guild.roles.find('name',role);
-  if(message.content.startsWith("*قبول")) {
+  if(message.content.startsWith("Wقبول")) {
     let acRoom = message.guild.channels.find('name', 'قبول-رفض');
     if(!acRoom) return message.reply("!!setac من فضلك انشاء روم **القبول-ال��فض** او اكتب الامر");
     if(acRoom) {
@@ -196,7 +197,7 @@ client.on("message", message => {
 });
 client.on('message',async message => {
   let mention = message.mentions.members.first();
-  if(message.content.startsWith("*رفض")) {
+  if(message.content.startsWith("Wرفض")) {
   if(!message.channel.guild) return;
   let acRoom = message.guild.channels.find('name', 'قبول-رفض');
   if(!acRoom) return message.reply("!!setac من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
